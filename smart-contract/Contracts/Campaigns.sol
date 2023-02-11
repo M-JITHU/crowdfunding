@@ -13,7 +13,7 @@ contract CampaignFactory {
     }
 }
 
-
+// creating campaign
 contract Campaign {
   struct Request {
       string description;
