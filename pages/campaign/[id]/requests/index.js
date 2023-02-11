@@ -125,7 +125,7 @@ const RequestRow = ({
       <Td>
         <Link
           color="purple.500"
-          href={`https://rinkeby.etherscan.io/address/${request.recipient}`}
+          href={`https://sepolia.etherscan.io/address/${request.recipient}`}
           isExternal
         >
           {" "}
@@ -163,11 +163,13 @@ const RequestRow = ({
             </Tooltip>
           ) : (
             <Button
-              colorScheme="purple"
+              // colorScheme="purple"
               variant="outline"
+              color={"black"}
+              bg={"#90E0EF"}
+              border={"2px solid darkgray"}
               _hover={{
-                bg: "purple.600",
-                color: "white",
+                color:"white",
               }}
               onClick={onApprove}
               isDisabled={disabled || request.approvalCount == approversCount}
@@ -323,7 +325,7 @@ export default function Requests({
                 fontWeight={"normal"}
                 color={useColorModeValue("gray.500", "gray.200")}
               >
-                (${getWEIPriceInUSD(ETHPrice, balance)})
+                (₹{getWEIPriceInUSD(ETHPrice, balance)})
               </Text>
             </Box>
           </Flex>
@@ -360,11 +362,12 @@ export default function Requests({
                     justify={"flex-end"}
                     fontSize={"md"}
                     fontWeight={600}
-                    color={"white"}
-                    bg={"purple.600"}
-                    href={"#"}
-                    _hover={{
-                      bg: "teal.400",
+                    color={"black"}
+                      bg={"#90E0EF"}
+                      href={'#'}
+                      border={"2px solid darkgray"}
+                      _hover={{
+                        color:"white",
                     }}
                   >
                     Add Withdrawal Request
@@ -432,12 +435,12 @@ export default function Requests({
             >
               <SimpleGrid row spacing={2} align="center">
                 <Stack align="center">
-                  <NextImage
+                  {/* <NextImage
                     src="/static/no-requests.png"
                     alt="no-request"
                     width="150"
                     height="150"
-                  />
+                  /> */}
                 </Stack>
                 <Heading
                   textAlign={"center"}
@@ -458,10 +461,11 @@ export default function Requests({
                 <Button
                   fontSize={"md"}
                   fontWeight={600}
-                  color={"white"}
-                  bg={"purple.600"}
-                  _hover={{
-                    bg: "teal.400",
+                  color={"black"}
+                      bg={"#90E0EF"}
+                      border={"2px solid darkgray"}
+                      _hover={{
+                        color:"white",
                   }}
                 >
                   <NextLink href={`/campaign/${campaignId}/requests/new`}>
@@ -472,10 +476,11 @@ export default function Requests({
                 <Button
                   fontSize={"md"}
                   fontWeight={600}
-                  color={"white"}
-                  bg={"gray.400"}
-                  _hover={{
-                    bg: "gray.300",
+                  color={"black"}
+                      bg={"#90E0EF"}
+                      border={"2px solid darkgray"}
+                      _hover={{
+                        color:"white",
                   }}
                 >
                   <NextLink href={`/campaign/${campaignId}/`}>

@@ -56,13 +56,13 @@ export default function Footer() {
         <Heading
           textAlign={useBreakpointValue({ base: "center", md: "left" })}
           fontFamily={"heading"}
-          color={useColorModeValue("teal.800", "white")}
+          color={useColorModeValue("cyan.800", "white")}
           as="h2"
           size="lg"
         >
           <Box
             as={"span"}
-            color={useColorModeValue("facebook.600", "facebook.600")}
+            color={useColorModeValue("black")}
             position={"relative"}
             zIndex={10}
             _after={{
@@ -72,14 +72,15 @@ export default function Footer() {
               bottom: 0,
               w: "full",
               h: "30%",
-              bg: useColorModeValue("purple.200", "purple.900"),
+              // bg: useColorModeValue("purple.200", "purple.900"),
               zIndex: -1,
             }}
           >
             <NextLink href="/">Crowdfinding with trust</NextLink>
           </Box>
         </Heading>
-        <Stack direction={"row"} spacing={6}>
+        
+        <Stack direction={"row"} spacing={6} text-align={"center"}>
           <NextLink href="/">Home</NextLink>
           <Link
             href={
@@ -98,18 +99,20 @@ export default function Footer() {
       <Box
         borderTopWidth={1}
         borderStyle={"solid"}
+        backgroundColor= {useColorModeValue( "#90E0EF")}
         borderColor={useColorModeValue("gray.200", "gray.700")}
       >
         <Container
           as={Stack}
           maxW={"6xl"}
           py={4}
+          marginLeft='auto'
+          // marginLeft={640}
           direction={{ base: "column", md: "row" }}
           spacing={4}
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          {/* <Text> Made by Jithendra, prasad , manjunath & kavana</Text> */}
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Website"} href={"https://kletech.ac.in/"}>
               {" "}

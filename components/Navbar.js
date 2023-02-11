@@ -46,8 +46,11 @@ export default function NavBar() {
         css={{
           backdropFilter: "saturate(180%) blur(5px)",
           backgroundColor: useColorModeValue(
-            "rgba(255, 255, 255, 0.8)",
-            "rgba(26, 32, 44, 0.8)"
+            // "rgba(255, 255, 255, 0.8)",
+            // "rgba(26, 32, 44, 0.8)"
+            // "#CDD6D4"
+            "#90E0EF"
+            
           ),
         }}
       >
@@ -56,13 +59,13 @@ export default function NavBar() {
             <Heading
               textAlign="left"
               fontFamily={"heading"}
-              color={useColorModeValue("purple.800", "white")}
+              color={useColorModeValue("green.800", "white")}
               as="h2"
               size="lg"
             >
               <Box
                 as={"span"}
-                color={useColorModeValue("facebook.600", "facebook.600")}
+                color={useColorModeValue("black")}
                 position={"relative"}
                 zIndex={10}
                 _after={{
@@ -72,7 +75,7 @@ export default function NavBar() {
                   bottom: 0,
                   w: "full",
                   h: "30%",
-                  bg: useColorModeValue("purple.100", "purple.900"),
+                  // bg: useColorModeValue("Teal.200", "Teal.200"),
                   zIndex: -1,
                 }}
               >
@@ -122,11 +125,14 @@ export default function NavBar() {
                   display={{ base: "none", md: "inline-flex" }}
                   fontSize={"md"}
                   fontWeight={600}
-                  color={"white"}
-                  bg={"purple.600"}
+                  color={"black"}
+                  bg={"#90E0EF"}
+                  border={"2px solid white"}
                   href={"#"}
                   _hover={{
-                    bg: "teal.400",
+                    // bg: "#00B4D8",
+                    color:"white",
+                    
                   }}
                   // onClick={async() => {
                   //   const provider = web3;
@@ -141,7 +147,7 @@ export default function NavBar() {
           </Stack>
 
           <Flex display={{ base: "flex", md: "none" }}>
-            <DarkModeSwitch />
+            {/* <DarkModeSwitch /> */}
           </Flex>
         </Container>
       </Flex>

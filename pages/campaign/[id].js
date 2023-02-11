@@ -39,7 +39,7 @@ import {
 
 import { InfoIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import Confetti from "react-confetti";
+// import Confetti from "react-confetti";
 
 import web3 from "../../smart-contract/web3";
 import Campaign from "../../smart-contract/campaign";
@@ -161,7 +161,7 @@ export default function CampaignSingle({
         <meta name="description" content="Create a Withdrawal Request" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      {isSubmitted ? <Confetti width={width} height={height} /> : null}
+      {/* {isSubmitted ? <Confetti width={width} height={height} /> : null} */}
       <main>
         {" "}
         <Box position={"relative"}>
@@ -172,10 +172,9 @@ export default function CampaignSingle({
               spacing={{ base: 10, lg: 32 }}
               py={{ base: 6 }}
             >
-              <Alert status="success" mt="2">
+              <Alert status="success">
                 <AlertIcon />
                 <AlertDescription mr={2}>
-                  {" "}
                   Thank You for your Contribution 🙏
                 </AlertDescription>
                 <CloseButton
@@ -209,7 +208,7 @@ export default function CampaignSingle({
                 {description}
               </Text>
               <Link
-                color="purple.500"
+                color="black"
                 href={`https://sepolia.etherscan.io/address/${id}`}
                 isExternal
               >
@@ -222,7 +221,7 @@ export default function CampaignSingle({
                     stat={`${web3.utils.fromWei(
                       minimumContribution,
                       "ether"
-                    )} ETH ($${getWEIPriceInUSD(
+                    )} ETH (₹${getWEIPriceInUSD(
                       ETHPrice,
                       minimumContribution
                     )})`}
@@ -292,7 +291,7 @@ export default function CampaignSingle({
                       <Text as="span" fontWeight={"bold"}>
                         {balance > 0
                           ? web3.utils.fromWei(balance, "ether")
-                          : "0, Become a Donor 😄"}
+                          : "0, Become a Donor "}
                       </Text>
                       <Text
                         as="span"
@@ -310,12 +309,12 @@ export default function CampaignSingle({
                         fontWeight={"normal"}
                         color={useColorModeValue("gray.500", "gray.200")}
                       >
-                        (${getWEIPriceInUSD(ETHPrice, balance)})
+                        (₹{getWEIPriceInUSD(ETHPrice, balance)})
                       </Text>
                     </Box>
 
                     <Text fontSize={"md"} fontWeight="normal">
-                      target of {web3.utils.fromWei(target, "ether")} ETH ($
+                      target of {web3.utils.fromWei(target, "ether")} ETH (₹
                       {getWEIPriceInUSD(ETHPrice, target)})
                     </Text>
                     <Progress
@@ -365,7 +364,7 @@ export default function CampaignSingle({
                       </InputGroup>
                       {amountInUSD ? (
                         <FormHelperText>
-                          ~$ {getETHPriceInUSD(ETHPrice, amountInUSD)}
+                          ₹ {getETHPriceInUSD(ETHPrice, amountInUSD)}
                         </FormHelperText>
                       ) : null}
                     </FormControl>
@@ -383,10 +382,11 @@ export default function CampaignSingle({
                           fontFamily={"heading"}
                           mt={4}
                           w={"full"}
-                          bgGradient="linear(to-r, purple.600,purple.400)"
-                          color={"white"}
+                          color={"black"}
+                          bg={"#90E0EF"}
+                          border={"2px solid darkgray"}
                           _hover={{
-                            bgGradient: "linear(to-r, teal.400,blue.400)",
+                            color:"white",
                             boxShadow: "xl",
                           }}
                           isLoading={formState.isSubmitting}
@@ -419,10 +419,11 @@ export default function CampaignSingle({
                   <Button
                     fontFamily={"heading"}
                     w={"full"}
-                    bgGradient="linear(to-r, purple.600,purple.300)"
-                    color={"white"}
-                    _hover={{
-                      bgGradient: "linear(to-r, teal.400,blue.400)",
+                    color={"black"}
+                      bg={"#90E0EF"}
+                      border={"2px solid darkgray"}
+                      _hover={{
+                        color:"white",
                       boxShadow: "xl",
                     }}
                   >
@@ -433,7 +434,7 @@ export default function CampaignSingle({
                   // color={useColorModeValue("facebook.600", "facebook.600")}
                   // onChange={useColorModeValue("white.600", "white.600")}
                   >
-                  🎅🏼You can see where these funds are being used & if you have
+                  You can see where these funds are being used & if you have
                   contributed you can also approve those Withdrawal Requests :)
                 </Text>
               </Stack>

@@ -132,7 +132,7 @@ function CampaignCard({
                   h={7}
                   w={7}
                   alignSelf={"center"}
-                  color={"teal.400"}
+                  color={"#90E0EF"}
                 />{" "}
               </chakra.a>
             </Tooltip>
@@ -157,7 +157,7 @@ function CampaignCard({
                 <Text as="span" fontWeight={"bold"}>
                   {balance > 0
                     ? web3.utils.fromWei(balance, "ether")
-                    : "0, Become a Donor 😄"}
+                    : "0, Become a Donor "}
                 </Text>
                 <Text
                   as="span"
@@ -175,12 +175,12 @@ function CampaignCard({
                   fontWeight={"normal"}
                   color={useColorModeValue("gray.500", "gray.200")}
                 >
-                  (${getWEIPriceInUSD(ethPrice, balance)})
+                  (₹{getWEIPriceInUSD(ethPrice, balance)})
                 </Text>
               </Box>
 
               <Text fontSize={"md"} fontWeight="normal">
-                target of {web3.utils.fromWei(target, "ether")} ETH ($
+                target of {web3.utils.fromWei(target, "ether")} ETH (₹
                 {getWEIPriceInUSD(ethPrice, target)})
               </Text>
               <Progress
@@ -240,11 +240,11 @@ export default function Home({ campaigns }) {
           <Heading
             textAlign={useBreakpointValue({ base: "center" })}
             fontFamily={"heading"}
-            color={useColorModeValue("facebook.600", "facebook.600")}
+            color={useColorModeValue("black")}
             as="h1"
             py={4}
           >
-            Welcome to the Blockchain Based Crowdfunding <br /> where you can bring your projects to life{" "}
+            Welcome to the Blockchain Based Crowdfunding<br />{" "}
           </Heading>
           <NextLink href="/campaign/new">
           <Stack
@@ -255,26 +255,14 @@ export default function Home({ campaigns }) {
             marginRight={"20"}
             display={{ base: "none", md: "flex" }}
           >
-            <Button
-              display={{ sm: "inline-flex" }}
-              fontSize={"md"}
-              fontWeight={600}
-              color={"white"}
-              bg={"purple.600"}
-              _hover={{
-                bg: "teal.300",
-              }}
-            >
-              Create Campaign
-            </Button>
+           
             </Stack>
           </NextLink>
         </Container>
         <Container py={{ base: "4", md: "12" }} maxW={"7xl"}>
           <HStack spacing={2}>
-            <SkeletonCircle size="4" />
             <Heading as="h2" size="lg"
-              color={useColorModeValue("facebook.600", "facebook.600")}>
+              color={useColorModeValue("black.00")}>
               View Campaigns
             </Heading>
           </HStack>
@@ -308,52 +296,7 @@ export default function Home({ campaigns }) {
             </SimpleGrid>
           )}
         </Container>
-        {/* <Container py={{ base: "4", md: "12" }} maxW={"7xl"} id="howitworks">
-          <HStack spacing={2}>
-            <SkeletonCircle size="4" />
-            <Heading as="h2" size="lg"
-              color={useColorModeValue("facebook.600", "facebook.600")}>
-              How crowdfunding works in Blockchain
-            </Heading>
-          </HStack>
-          <Divider marginTop="4" />
-          <SimpleGrid columns={{ base: 2, md: 3 }} spacing={10} py={8}
-          color={useColorModeValue("facebook.600", "facebook.600")}>
-            <Feature
-             icon={<Icon as={FcDonate} w={10} h={10} />}
-              title={"Create a Campaign for Fundraising"}
-              text={
-                "It’ll take only 2 minutes. Just enter a few details about the funds you are raising for."
-              }
-            />
-            <Feature
-              icon={<Icon as={FcDecision} w={10} h={10} />}
-              title={"Share your Campaign"}
-              text={
-                "All you need to do is share the Campaign with your friends, family and others. In no time, support will start pouring in."
-              }
-            />
-            <Feature
-              icon={<Icon as={FcApproval} w={10} h={10} />}
-              title={"Request and Withdraw Funds"}
-              text={
-                "The funds raised can be withdrawn directly to the recipient when 50% of the contributors approve of the Withdrawal Request."
-              }
-            />
-          </SimpleGrid>
-          <Heading as="h2" size="md" mt="8"
-            color={useColorModeValue("facebook.600", "facebook.600")}>
-            For more details about how crowdfunding works {" "}
-            <Link
-              color="purple.500"
-              href="https://www.entrepreneur.com/science-technology/how-to-make-the-most-of-crowdfunding-on-the-blockchain/417187"
-              isExternal
-            >
-              Click here <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
-          </Heading>
-          <Divider marginTop="4" />
-        </Container> */}
+      
       </main>
     </div>
   );

@@ -90,13 +90,13 @@ export default function NewCampaign() {
       </Head>
       <main>
         <Stack spacing={8} mx={"auto"} maxW={"2xl"} py={12} px={6}>
-          <Text fontSize={"lg"} color={"purple.400"}>
+          <Text fontSize={"lg"} color={"gray"}>
             <ArrowBackIcon mr={2} />
             <NextLink href="/"> Back to Home</NextLink>
           </Text>
           <Stack>
             <Heading fontSize={"4xl"}
-              color={useColorModeValue("facebook.600", "facebook.600")}>
+              color={useColorModeValue("black")}>
               Create a New Campaign 📢</Heading>
           </Stack>
           <Box
@@ -124,7 +124,7 @@ export default function NewCampaign() {
                   </InputGroup>
                   {minContriInUSD ? (
                     <FormHelperText>
-                      ~$ {getETHPriceInUSD(ETHPrice, minContriInUSD)}
+                      ₹ {getETHPriceInUSD(ETHPrice, minContriInUSD)}
                     </FormHelperText>
                   ) : null}
                 </FormControl>
@@ -166,7 +166,7 @@ export default function NewCampaign() {
                   </InputGroup>
                   {targetInUSD ? (
                     <FormHelperText>
-                      ~$ {getETHPriceInUSD(ETHPrice, targetInUSD)}
+                      ~₹ {getETHPriceInUSD(ETHPrice, targetInUSD)}
                     </FormHelperText>
                   ) : null}
                 </FormControl>
@@ -193,10 +193,11 @@ export default function NewCampaign() {
                 <Stack spacing={10}>
                   {/* {wallet.status === "connected" ? ( */}
                     <Button
-                      bg={"purple.600"}
-                      color={"white"}
+                      color={"black"}
+                      bg={"#90E0EF"}
+                      border={"2px solid darkgray"}
                       _hover={{
-                        bg: "teal.400",
+                        color:"white",
                       }}
                       isLoading={isSubmitting}
                       type="submit"

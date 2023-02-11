@@ -124,7 +124,7 @@ export default function NewRequest() {
                   </InputGroup>
                   {inUSD ? (
                     <FormHelperText>
-                      ~$ {getETHPriceInUSD(ETHPrice, inUSD)}
+                      ₹ {getETHPriceInUSD(ETHPrice, inUSD)}
                     </FormHelperText>
                   ) : null}
                 </FormControl>
@@ -157,12 +157,13 @@ export default function NewRequest() {
                   </Alert>
                 ) : null}
                 <Stack spacing={10}>
-                  {/* {wallet.status === "connected" ? ( */}
+            
                     <Button
-                      bg={"purple.400"}
-                      color={"white"}
+                      color={"black"}
+                      bg={"#90E0EF"}
+                      border={"2px solid darkgray"}
                       _hover={{
-                        bg: "purple.500",
+                        color:"white",
                       }}
                       isLoading={isSubmitting}
                       type="submit"
